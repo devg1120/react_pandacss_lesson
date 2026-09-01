@@ -33,6 +33,18 @@ const customComponents = {
   pre: ({ node, ...props }) => (
     <pre style={{ border: 'none',  backgroundColor: '#cce5ff' }} {...props} />
   ),
+  "excode": ({ node, ...props }) => (
+    <pre style={{ border: 'none',  
+	    backgroundColor: '#606060',
+	    color: '#ffffff',
+	    width: '40%',
+	    borderRadius: "0px",
+	    marginLeft: "30px",
+
+            //whiteSpace: "pre-line",     /* 行頭のスペースを詰める */
+            //ewhiteSpace: "pre-nowrap",     /* 行頭のスペースを詰める */
+    }} {...props} />
+  ),
   code: ({ node, ...props }) => (
     <code style={{ border: 'none',  backgroundColor: '#cce5ff' }} {...props} />
   ),

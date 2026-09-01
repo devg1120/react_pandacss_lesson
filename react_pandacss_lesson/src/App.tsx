@@ -11,12 +11,15 @@ import Lesson1 from "./lesson/lesson1";
 import Lesson1md from "./lesson/lesson1.md?raw";
 
 function App() {
+  const h1Style = css.raw({
+    "font-size": "1.5rem",
+    "font-weight": "900",
+    "color": "#000",
+    "padding-left": "15px",
+  })
   return (
     <>
-    {/*
-      <h1 className={css({ fontSize: '3xl', fontWeight: 'bold' })}>メインタイトル</h1>
-      <h2 className={css({ fontSize: '2xl', fontWeight: 'bold' })}>セクション見出し</h2>
-      */}
+      <h1 className={css(h1Style)} >メインタイトル</h1>
       <div style={{padding:"15px"}}>
          <MarkDown content={Lesson1md} />
       </div>

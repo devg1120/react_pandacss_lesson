@@ -13,10 +13,8 @@ import Lesson1md from "./lesson/lesson1.md?raw";
 function App() {
   return (
     <>
-    {/*
       <h1 className={css({ fontSize: '3xl', fontWeight: 'bold' })}>メインタイトル</h1>
       <h2 className={css({ fontSize: '2xl', fontWeight: 'bold' })}>セクション見出し</h2>
-      */}
       <div style={{padding:"15px"}}>
          <MarkDown content={Lesson1md} />
       </div>

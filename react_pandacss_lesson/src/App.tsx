@@ -14,8 +14,13 @@ function App() {
   const h1Style = css.raw({
     "font-size": "1.5rem",
     "font-weight": "900",
-    "color": "#000",
-    "padding-left": "15px",
+    "text-transform": "uppercase",
+    "letter-spacing": "-1px",
+    "line-height": "2.2",
+    "color": "#1E90FF",
+    "border-left": "12px solid #1E90FF",
+    "border-bottom": "1px solid #1E90FF",
+    "padding-left": "10px",
   })
   return (
     <>

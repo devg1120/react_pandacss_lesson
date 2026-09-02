@@ -35,7 +35,9 @@ const customComponents = {
   ),
   "excode": ({ node, ...props }) => (
     <pre style={{ border: 'none',  
-	    backgroundColor: '#606060',
+	    //backgroundColor: '#606060',
+	    backgroundColor: '#000033',
+	    backgroundColor: '#000035',
 	    color: '#ffffff',
 	    width: '40%',
 	    borderRadius: "0px",

@@ -3,7 +3,7 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 
 //https://k8shiro.github.io/ReactCompareCodeHighlighter/
-import { a11yLight  } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { a11yLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { ocean } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -34,6 +34,7 @@ export default function CodeView(props: Props) {
       showLineNumbers
       customStyle={{
         width: "100%",
+        height: "100%",
         /*margin: "10px",*/
         border: "solid 1px gray",
         overflow: "auto",

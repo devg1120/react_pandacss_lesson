@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <h1 className={css(h1Style)} >メインタイトル</h1>
-      <div style={{"padding-left":"15px", "padding-top":"10px"}}>
+      <div style={{"paddingLeft":"15px", "paddingTop":"10px"}}>
          <MarkDown content={Lesson1md} />
       </div>
       <Section width="400px" height="500px" bg="white" code={CODE.lesson1}>

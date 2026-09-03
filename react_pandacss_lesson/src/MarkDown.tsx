@@ -30,31 +30,33 @@ const customComponents = {
   hr: ({ node, ...props }) => (
     <hr style={{ border: 'none', height: '2px', backgroundColor: 'lightgray' }} {...props} />
   ),
+
+/*
   pre: ({ node, ...props }) => (
     <pre style={{ border: 'none',  backgroundColor: '#cce5ff' }} {...props} />
   ),
-  "excode": ({ node, ...props }) => (
-    <pre style={{ border: 'none',  
-	    //backgroundColor: '#606060',
-	    backgroundColor: '#000033',
-	    backgroundColor: '#000035',
-	    color: '#ffffff',
-	    width: '40%',
-	    borderRadius: "0px",
-	    marginLeft: "30px",
+*/
 
-            //whiteSpace: "pre-line",     /* 行頭のスペースを詰める */
-            //ewhiteSpace: "pre-nowrap",     /* 行頭のスペースを詰める */
-    }} {...props} />
-  ),
+  pre: ({ node, className, ...props }) => {
+    if (className?.includes('code')) {
+       return <pre style={{ border: 'none',  
+	       backgroundColor: '#123456',
+	       color: 'white',
+	       width: '600px'
+       }} {...props} />
+    }
+       return <pre style={{ border: 'none',  backgroundColor: '#cce5ff' }} {...props} />
+  },
+  
+
   code: ({ node, ...props }) => (
     <code style={{ border: 'none',  backgroundColor: '#cce5ff' }} {...props} />
   ),
   ul: ({ node, ...props }) => (
-    <ul style={{ "list-style-type":"disc",  "padding-left": "1.5rem"  }} {...props} />
+    <ul style={{ "listStyleType":"disc",  "paddingLeft": "1.5rem"  }} {...props} />
   ),
   ol: ({ node, ...props }) => (
-    <ol style={{ "list-style-type":"decimal",  "padding-left": "1.5rem"  }} {...props} />
+    <ol style={{ "listStyleType":"decimal",  "paddingLeft": "1.5rem"  }} {...props} />
   )
 };
 

@@ -1,28 +1,75 @@
-//import React, { lazy, Suspense } from "react";
-import "./App.css";
-import { css } from '../styled-system/css';
+import React, { lazy, Suspense } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
+import rehypeSlug from 'rehype-slug';
 
+//import './MarkdownContainer.css'
+//import './github-markdown-css/github-markdown.css'
+import "./github-markdown-css/github-markdown-light.css";
+import './MarkdownContainer.css'
 
-import Section from "./Section";
-import MarkDown from "./MarkDown";
-import * as CODE from "./code";
+/*
+      <ReactMarkdown 
+                   remarkPlugins={[remarkGfm]}
+                   rehypePlugins={[rehypeRaw, rehypeSanitize]}
+      >{content}</ReactMarkdown>
+*/
 
-import Lesson1 from "./lesson/lesson1";
-import Lesson1md from "./lesson/lesson1.md?raw";
+const customComponents = {
+  h1: ({ node, ...props }) => (
+    <h1 
+      style={{ 
+        borderBottom: '3px solid lightgray', // 下線の太さと色を指定
+        paddingBottom: '8px'            // 文字と線の間の余白
+      }} 
+      {...props} 
+    />
+  ),
+  hr: ({ node, ...props }) => (
+    <hr style={{ border: 'none', height: '2px', backgroundColor: 'lightgray' }} {...props} />
+  ),
+  pre: ({ node, ...props }) => (
+    <pre style={{ border: 'none',  backgroundColor: '#cce5ff' }} {...props} />
+  ),
+  "sample-code": ({ node, ...props }) => (
+    <pre style={{ border: 'none',  
+	    //backgroundColor: '#606060',
+	    //backgroundColor: '#000033',
+	    //backgroundColor: '#000035',
+	    //backgroundColor: '#233B6C',
+	    backgroundColor: '#123456',
+	    color: '#ffffff',
+	    width: '300px',
+	    borderRadius: "0px",
+	    padding: "-4px 3px 4px 12px",
 
-function App() {
+            //whiteSpace: "pre-line",     /* 行頭のスペースを詰める */
+            //ewhiteSpace: "pre-nowrap",     /* 行頭のスペースを詰める */
+    }} {...props} />
+  ),
+  code: ({ node, ...props }) => (
+    <code style={{ border: 'none',  backgroundColor: '#cce5ff' }} {...props} />
+  ),
+  ul: ({ node, ...props }) => (
+    <ul style={{ "list-style-type":"disc",  "padding-left": "1.5rem"  }} {...props} />
+  ),
+  ol: ({ node, ...props }) => (
+    <ol style={{ "list-style-type":"decimal",  "padding-left": "1.5rem"  }} {...props} />
+  )
+};
+
+function MarkDown({ content }) {
   return (
-    <>
-      <h1 className={css({ fontSize: '3xl', fontWeight: 'bold' })}>メインタイトル</h1>
-      <h2 className={css({ fontSize: '2xl', fontWeight: 'bold' })}>セクション見出し</h2>
-      <div style={{padding:"15px"}}>
-         <MarkDown content={Lesson1md} />
-      </div>
-      <Section width="400px" height="500px" bg="white" code={CODE.lesson1}>
-        <Lesson1 />
-      </Section>
-    </>
+    <div className="markdown-body" style={{height:"400px"}}>
+      <ReactMarkdown 
+                   components={customComponents}
+                   remarkPlugins={[remarkGfm]}
+                   rehypePlugins={[rehypeRaw, rehypeSlug]}
+      >{content}</ReactMarkdown>
+    </div>
   );
 }
 
-export default App;
+export default MarkDown;

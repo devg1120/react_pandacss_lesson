@@ -12,11 +12,7 @@ export default function App() {
   };
 
   return (
-	  <>
-      <header style={{ marginLeft: '220px', position: 'sticky', top: '0px', height:'20px',  width: '100%' }}>
-      HEADER
-      </header>
-    <div style={{ display: 'flex' , position : 'sticky', top:'20px', }}>
+    <div style={{ display: 'flex' }}>
       {/* サイドバー */}
       <nav style={{ position: 'fixed', width: '200px', padding: '20px' }}>
         <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -37,8 +33,9 @@ export default function App() {
           </li>
         </ul>
       </nav>
+
       {/* メインコンテンツ */}
-      <main style={{ marginLeft: '220px',   padding: '20px', width: '100%' }}>
+      <main style={{ marginLeft: '220px', padding: '20px', width: '100%' }}>
         <section ref={section1Ref} style={{ height: '100vh', background: '#f0f0f0' }}>
           <h2>セクション 1 の内容</h2>
         </section>
@@ -49,8 +46,7 @@ export default function App() {
           <h2>セクション 3 の内容</h2>
         </section>
       </main>
-</div>
-</>
+    </div>
   );
 }
 

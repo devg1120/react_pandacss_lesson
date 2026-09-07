@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "prepare": "panda codegen",
+    "pre": "npx panda codegen",
     "predev": "node ./code2string.js src/",
     "dev": "vite --host --port 3000",
     "build": "tsc -b && vite build",

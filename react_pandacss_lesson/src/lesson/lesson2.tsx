@@ -42,7 +42,6 @@ export default function Counter() {
     </div>
     <h3 className={css(hStyle)}>circle</h3>
         <div className={circle({ size: "20", bg: "lightgreen", overflow: "hidden" })}>
-      <img src="" alt="" />
     </div>
 
  </>

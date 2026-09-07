@@ -15,6 +15,9 @@ import Lesson2md from "./lesson/lesson2.md?raw";
 import Lesson3 from "./lesson/lesson3";
 import Lesson3md from "./lesson/lesson3.md?raw";
 
+import Lesson4 from "./lesson/lesson4";
+import Lesson4md from "./lesson/lesson4.md?raw";
+
 import Doc from "./lesson/doc";
 import Docmd from "./lesson/doc.md?raw";
 
@@ -80,11 +83,21 @@ function App() {
           </Section>
       </div>
 
+
+      <h1 className={css(h1Style)}>Style-Props</h1>
+      <div style={{ margin: "10px 50px 10px 10px"}}>
+          <Section  width="600px" height="600px"  bg="white" code={CODE.lesson4}  flex={true} >
+            <Lesson4 />
+          </Section>
+      </div>
+
+      {/*********************************************************************************/}
       <hr/>
       <h1 className={css(h1Style)}>MarkDown DOC</h1>
       <div style={{ paddingLeft: "15px", paddingTop: "10px" }}>
         <MarkDown content={Docmd} />
       </div>
+
       {/*
       <Section width="400px" height="500px" bg="white" code={CODE.doc}>
         <Doc />

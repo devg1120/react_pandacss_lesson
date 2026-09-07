@@ -191,3 +191,45 @@ export default function Content() {
 
 export { lesson3 };
 
+
+
+const lesson4 = `
+//import { css } from "../../styled-system/css";
+//import { cva } from '../../styled-system/css';
+import { styled } from "../../styled-system/jsx";
+
+const hStyle = css.raw({
+    "font-size": "1.0rem",
+    "font-weight": "500",
+    "letter-spacing": "1.5px",
+    "line-height": "2.2",
+    "color": "#000000",
+    "border-left": "8px solid gray", 
+    "border-bottom": "1px solid gray",
+    "padding-left": "8px",
+    "margin-top": "10px",
+    "margin-bottom": "10px",
+});
+
+
+export default function Content() {
+
+ return (
+    <styled.div
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      flexDirection="column-reverse"
+    >
+      <div>First</div>
+      <div>second</div>
+      <div>Third</div>
+    </styled.div>
+  );
+
+}
+`;
+
+
+export { lesson4 };
+

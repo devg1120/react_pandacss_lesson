@@ -73,9 +73,9 @@ const customComponents = {
   ),
 };
 
-function MarkDown({ content }) {
+function MarkDown({ content , height="400px"}) {
   return (
-    <div className="markdown-body" style={{ height: "400px" }}>
+    <div className="markdown-body" style={{ height: height , padding: "14px"}}>
       <ReactMarkdown
         components={customComponents}
         remarkPlugins={[remarkGfm]}

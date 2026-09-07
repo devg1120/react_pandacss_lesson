@@ -1,15 +1,17 @@
 import CodeView from "./CodeView";
 
-function Section({ children, width, height, bg, code, flex = false }) {
+function Section({ children, width="600px", height="300px", bg="whitw", code, flex = false }) {
   if (flex) {
     return (
       <>
-        <section id="center1" style={{ display: "flex", height: height }}>
+        <section id="center1" style={{ 
+	          display: "flex", 
+		  height: height }}>
           <div
             style={{
-              border: "solid 1px gray",
+              border: "solid 1px white",
               margin: "0px",
-              padding: "20px",
+              padding: "0px 20px 0px 0px",
               width: width,
               backgroundColor: bg,
             }}
@@ -23,7 +25,8 @@ function Section({ children, width, height, bg, code, flex = false }) {
   } else {
     return (
       <>
-        <section id="center1">
+        <section id="center1" style={{ 
+	       }} >
           <div
             style={{
               border: "solid 1px gray",
